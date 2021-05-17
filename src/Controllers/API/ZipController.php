@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 use Bendt\Zip\Models\Zip as Model;
-use Bendt\Zip\Service\ZipService;
+use Bendt\Zip\Services\ZipService;
 
 class ZipController extends ApiController
 {

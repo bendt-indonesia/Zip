@@ -1,6 +1,6 @@
 <?php
 
-namespace Bendt\Zip\Service;
+namespace Bendt\Zip\Services;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
