@@ -19,9 +19,6 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
-use Bendt\Option\Classes\OptionManager;
-use Bendt\Option\Facades\Option as OptionFacades;
-
 class BendtZipServiceProvider extends ServiceProvider
 {
     /**
@@ -34,39 +31,15 @@ class BendtZipServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         $this->publishes([
-            __DIR__.'/config/bendt-option.php' => config_path('bendt-option.php'),
+            __DIR__.'/config/bendt-zip.php' => config_path('bendt-zip.php'),
         ], 'config');
 
-        $this->publishes([
-            __DIR__.'/Export/QueryFilter.php' => app_path('Filters/QueryFilter.php'),
-        ], 'filters');
-
-        $this->publishes([
-            __DIR__.'/Export/IEnum.php' => app_path('Interfaces/IEnum.php'),
-            __DIR__.'/Export/EnumClass.php' => app_path('Enums/EnumClass.php'),
-            __DIR__.'/Export/GenderType.php' => app_path('Enums/GenderType.php'),
-        ], 'enum');
-
-        $this->publishes([
-            __DIR__.'/Export/Traits/BelongsToCreatedByTrait.php' => app_path('Traits/BelongsToCreatedByTrait.php'),
-            __DIR__.'/Export/Traits/BelongsToDeletedByTrait.php' => app_path('Traits/BelongsToDeletedByTrait.php'),
-            __DIR__.'/Export/Traits/BelongsToUpdatedByTrait.php' => app_path('Traits/BelongsToUpdatedByTrait.php'),
-            __DIR__.'/Export/Traits/RelationshipTrait.php' => app_path('Traits/RelationshipTrait.php'),
-            __DIR__.'/Export/Traits/ScopeActiveTrait.php' => app_path('Traits/ScopeActiveTrait.php'),
-            __DIR__.'/Export/Traits/ScopeAscTrait.php' => app_path('Traits/ScopeAscTrait.php'),
-            __DIR__.'/Export/Traits/ScopeDescTrait.php' => app_path('Traits/ScopeDescTrait.php'),
-            __DIR__.'/Export/Traits/ScopeFilter.php' => app_path('Traits/ScopeFilter.php'),
-        ], 'traits');
-
-        if(config('bendt-option.migration', true)) {
+        if(config('bendt-zip.migration', true)) {
             $this->loadMigrationsFrom(__DIR__ . '/Database/migrations');
         }
 
-        //Load helper
-        require __DIR__ . '/helper.php';
-
         //Require Routes if not disabled
-        if(config('bendt-option.api_route', true)) {
+        if(config('bendt-zip.api_route', true)) {
             require __DIR__ . '/routes/api.php';
         }
     }
