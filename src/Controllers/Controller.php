@@ -1,6 +1,6 @@
 <?php
 
-namespace Bendt\Options\Controllers;
+namespace Bendt\Zip\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bendt\Option\Exceptions;
+namespace Bendt\Zip\Exceptions;
 
 class MyValidationException extends \Exception
 {

@@ -2,7 +2,7 @@
 
 namespace Bendt\Zip\Controllers\API;
 
-use Bendt\Option\Controllers\ApiController;
+use Bendt\Zip\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

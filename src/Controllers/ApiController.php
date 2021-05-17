@@ -11,11 +11,11 @@
  Please don't modify this file because it may be overwritten when re-generated.
  */
 
-namespace Bendt\Option\Controllers;
+namespace Bendt\Zip\Controllers;
 
 use App\Http\Controllers\Controller as AppController;
-use Bendt\Option\Models\ErrorLog;
-use Bendt\Option\Exceptions\MyValidationException;
+use Bendt\Zip\Models\ErrorLog;
+use Bendt\Zip\Exceptions\MyValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
