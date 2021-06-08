@@ -162,7 +162,9 @@ class ZipController extends ApiController
     public function check_zip(Request $request)
     {
         try {
-            $this->authorize('view', Auth::user(), Model::class);
+            if (config('bendt-zip.authorize', false)) {
+                $this->authorize('view', Auth::user(), Model::class);
+            }
 
             $this->validate($request, [
                 'zip' => 'required',
