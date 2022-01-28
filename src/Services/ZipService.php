@@ -11,7 +11,7 @@ class ZipService
     {
         $models = DB::table('zip')
             ->distinct()
-            ->select('province_id as id', 'province_name as name');
+            ->select('province_id as id', 'province_name as name', 'province_name');
 
         return $models;
     }
@@ -58,5 +58,26 @@ class ZipService
             ->first();
 
         return $models;
+    }
+
+    public static function findRajaCityId($province_id, $city_id, $kec_id = null, $kel_id = null) {
+        if(!$province_id || !$city_id) return null;
+
+        $model = DB::table('zip')
+            ->distinct()
+            ->select('province_id', 'province_name', 'city_id', 'city_name', 'city_type', 'kec_id', 'kec_name', 'zip','raja_city_id')
+            ->where('province_id', $province_id)
+            ->where('city_id', $city_id);
+
+        if($kec_id) {
+            $model = $model->where('kec_id',$kec_id);
+        }
+        if($kel_id) {
+            $model = $model->where('kel_id',$kel_id);
+        }
+
+        $model = $model->first();
+
+        return $model;
     }
 }
