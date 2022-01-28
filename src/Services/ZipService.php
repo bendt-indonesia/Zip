@@ -20,7 +20,7 @@ class ZipService
     {
         $models = DB::table('zip')
             ->distinct()
-            ->select('city_id as id', 'city_name as name', 'city_type', 'raja_city_id')
+            ->select('city_id as id', 'city_name as name', 'city_name', 'city_type', 'raja_city_id')
             ->where('province_id', $province_id);
 
         return $models;
@@ -30,7 +30,7 @@ class ZipService
     {
         $models = DB::table('zip')
             ->distinct()
-            ->select('kec_id as id', 'kec_name as name')
+            ->select('kec_id as id', 'kec_name as name', 'kec_name')
             ->where('province_id', $province_id)
             ->where('city_id', $city_id);
 
@@ -41,7 +41,7 @@ class ZipService
     {
         $models = DB::table('zip')
             ->distinct()
-            ->select('kel_id as id', 'kel_name as name', 'zip')
+            ->select('kel_id as id', 'kel_name as name', 'kel_name', 'zip')
             ->where('province_id', $province_id)
             ->where('city_id', $city_id)
             ->where('kec_id', $kec_id);
