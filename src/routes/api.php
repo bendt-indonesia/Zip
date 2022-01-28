@@ -2,7 +2,6 @@
 
 Route::group([
     'namespace' => 'Bendt\Zip\Controllers\API',
-    'middleware' => 'auth:api',
     'prefix' => 'api',
 ], function() {
     Route::get('province', 'ZipController@province');
