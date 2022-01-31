@@ -53,7 +53,7 @@ class ZipService
     {
         $models = DB::table('zip')
             ->distinct()
-            ->select('province_id', 'province_name', 'city_id', 'city_name', 'city_type', 'kec_id', 'kec_name', 'zip')
+            ->select('province_id', 'province_name', 'city_id', 'city_name', 'city_type', 'kec_id', 'kec_name', 'raja_city_id', 'zip')
             ->where('zip', $zip)
             ->first();
 
