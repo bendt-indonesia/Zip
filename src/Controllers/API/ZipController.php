@@ -185,6 +185,7 @@ class ZipController extends ApiController
                         'label' => $find->city_name,
                         'value' => $find->city_id,
                         'type' => $find->city_type,
+                        'raja_city_id' => $find->raja_city_id,
                     ],
                     'kecamatan' => [
                         'label' => $find->kec_name,
